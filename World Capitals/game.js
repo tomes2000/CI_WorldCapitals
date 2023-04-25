@@ -59,10 +59,10 @@ async function callApi() {
     const response = await fetch(apiAddress);
     if (response.status >= 200 && response.status <= 299) {
       data = await response.json();
-      // hides the difficulty box and runs start game function with data called
+      // Removes the difficulty box and starts the game
       removeDifficulty();
       getQuestion(data);
     } else
-      // This is where the error is handled - redirects to 500 page
+      // Error re-directed to 500.html page
       window.location.assign("500.html");
   }
