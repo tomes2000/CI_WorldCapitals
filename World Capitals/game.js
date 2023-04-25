@@ -66,3 +66,10 @@ async function callApi() {
       // Error re-directed to 500.html page
       window.location.assign("500.html");
   }
+
+  // Increase Score 
+function increaseScore() {
+    score += 10;
+    scoreCounter.innerText = `${score}`;
+  }
+  
