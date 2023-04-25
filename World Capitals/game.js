@@ -12,3 +12,10 @@ const medium = document.getElementById("medium");
 const hard = document.getElementById("hard");
 let apiAddress;
 
+// GAME PAGE
+// Scores & Question Number
+let questionCounter = 1;
+let questionNumber = document.getElementById("answer-no");
+let score = 0;
+let acceptingAnswer = true;
+let scoreCounter = document.getElementById("score")
