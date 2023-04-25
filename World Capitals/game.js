@@ -44,4 +44,12 @@ function removeDifficulty() {
     document.getElementById("quiz-area").classList.remove("hide");
 }
 
+// Shuffle answers
+// Source - https://www.youtube.com/watch?v=tLxBwSL3lPQ&ab_channel=AdamKhoury
 
+function arrayShuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      let s = Math.floor(Math.random() * (i + 1));
+      [array[i], array[s]] = [array[s], array[i]];
+    }
+  }
