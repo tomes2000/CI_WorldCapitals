@@ -53,3 +53,16 @@ function arrayShuffle(array) {
       [array[i], array[s]] = [array[s], array[i]];
     }
   }
+
+  //Recall API Function
+async function callApi() {
+    const response = await fetch(apiAddress);
+    if (response.status >= 200 && response.status <= 299) {
+      data = await response.json();
+      // hides the difficulty box and runs start game function with data called
+      removeDifficulty();
+      getQuestion(data);
+    } else
+      // This is where the error is handled - redirects to 500 page
+      window.location.assign("500.html");
+  }
