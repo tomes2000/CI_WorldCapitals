@@ -31,4 +31,10 @@ let correctAnswer;
 const next = document.getElementById("next");
 let answerSelected;
 
+// End Game Area
+const finalScore = document.getElementById("final-score");
+const userName = document.getElementById("userName");
+const submitScoreBtn = document.getElementById("submitscorebtn");
+const maxHighScores = 10;
+
 
