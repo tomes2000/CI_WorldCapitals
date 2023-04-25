@@ -37,4 +37,11 @@ const userName = document.getElementById("userName");
 const submitScoreBtn = document.getElementById("submitscorebtn");
 const maxHighScores = 10;
 
+// Remove difficulty function
+
+function removeDifficulty() {
+    document.getElementById("difficulty").classList.add("hide");
+    document.getElementById("quiz-area").classList.remove("hide");
+}
+
 
