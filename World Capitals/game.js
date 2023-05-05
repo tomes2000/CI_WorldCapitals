@@ -73,3 +73,18 @@ function increaseScore() {
     scoreCounter.innerText = `${score}`;
   }
   
+// Next question function
+function nextQuestion(e) {
+  questionCounter++;
+  questionCounter.innerText = '${questionCounter}';
+  document.getElementById(answerSelected).classList.remove("correctbtn","incorrectbtn");
+  let displayCorrectAnswer = document.querySelector("correctbtn");
+
+  for (let button of answerButtons) {
+    if (button.innerHTML === correctAnswer) {
+      button.removeAttribute("data-correct", "true");
+    }
+  }
+  getQuestion(data);
+}
+
