@@ -1,3 +1,4 @@
+// Initial data and questionNumber values
 let data = {};
 let questionNumber = 0;
 
@@ -74,7 +75,7 @@ function increaseScore() {
   }
   
 // Next question function
-function nextQuestion(e) {
+function nextQuestion(eventVariable) {
   questionCounter++;
   questionCounter.innerText = '${questionCounter}';
   document.getElementById(answerSelected).classList.remove("correctbtn","incorrectbtn");
@@ -87,4 +88,33 @@ function nextQuestion(e) {
   }
   getQuestion(data);
 }
+
+// Check the next question function
+function checkAnswer(eventVariable) {
+
+  // If answer is clicked on, then the answer button is disabled to prevent re-selection of answers
+  $('.answer-text').prop('disabled', true);
+  // Implement new ID variable when button is clicked
+  answerSelected = eventVariable.target.getAttribute("id");
+
+  // Verification if answer is correct in the dataset
+  if (eventVariable.target.dataset.correct) {
+    document.getElementById("outer-container").classList.add("correct");
+    document.getElementById(answerSelected).classList.add("correctbtn");
+    increaseScore();
+
+  } else {
+    document.getElementById(answerSelected).classList.add("incorrectbtn");
+    document.getElementById("outer-container").classList.add("incorrect");
+    let displayCorrectAnswer = document.querySelector("[data-correct='true']");
+    displayCorrectAnswer.classList.add("correctbtn");
+  }
+
+  // Display of next button from "hide" class
+  next.classList.remove("hide");
+  next.addEventListener("click", nextQuestion);
+}
+
+// Get question function
+
 
