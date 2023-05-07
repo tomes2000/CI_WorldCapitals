@@ -121,4 +121,18 @@ function getQuestion(data) {
   document.getElementById("outer-container").classList.remove("correct", "incorrect");
 }
 
+// Interact with answer button
+$('.answer-text').prop('disabled', false);
+let results = data.results[questionNumber];
+if (questionNumber <= 14) {
+  question.innerHTML = results.quesiton;
+  correctAnswer = results.correctAnswer;
+
+  const answers = [...results.incorrectAnswers, correctAnswer];
+  arrayShuffle(answers);
+  answer1.innerHTML = `${answers[0]}`;
+  answer2.innerHTML = `${answers[1]}`;
+  answer3.innerHTML = `${answers[2]}`;
+  answer4.innerHTML = `${answers[3]}`;
+}
 
