@@ -102,7 +102,7 @@ function checkAnswer(eventVariable) {
     document.getElementById("outer-container").classList.add("correct");
     document.getElementById(answerSelected).classList.add("correctbtn");
     increaseScore();
-
+   // Verification if answer is incorrect in the dataset
   } else {
     document.getElementById(answerSelected).classList.add("incorrectbtn");
     document.getElementById("outer-container").classList.add("incorrect");
@@ -116,5 +116,9 @@ function checkAnswer(eventVariable) {
 }
 
 // Get question function
+function getQuestion(data) {
+  next.classList.add("hide");
+  document.getElementById("outer-container").classList.remove("correct", "incorrect");
+}
 
 
