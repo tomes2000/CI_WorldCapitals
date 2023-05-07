@@ -157,12 +157,12 @@ function getQuestion(data) {
 }
 
 /// High score function
-// https://www.youtube.com/watch?v=DFhmNLKwwGw&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx&index=11&ab_channel=JamesQQuick
+// (tutorial) - https://www.youtube.com/watch?v=DFhmNLKwwGw&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx&index=11&ab_channel=JamesQQuick
 function saveHighScore(eventVariable) {
   eventVariable.preventDefault();
 
   const scoreLog = { 
-  name: teamName.value, 
+  name: HighScoreName.value, 
   score: score
 };
 
@@ -174,3 +174,20 @@ function saveHighScore(eventVariable) {
   window.location.assign("highscore.html");
 }
 
+/// High score storage
+// (tutorial) - https://www.youtube.com/watch?v=DFhmNLKwwGw&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx&index=9
+
+const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+// Event listener
+HighScoreName.addEventListener("keyup", () => {
+  submitScoreBtn.disabled = !HighScoreName.value;
+});
+
+// Save high score
+  submitScoreBtn.addEventListener("click", saveHighScore);
+
+// Event listeners
+  easy.addEventListener('click', callApi);
+  medium.addEventListener('click', callApi);
+  hard.addEventListener('click', callApi);
