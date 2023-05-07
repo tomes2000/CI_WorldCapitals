@@ -155,3 +155,22 @@ function getQuestion(data) {
   finalScore.innerText = `${score}`;
   }
 }
+
+/// High score function
+// https://www.youtube.com/watch?v=DFhmNLKwwGw&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx&index=11&ab_channel=JamesQQuick
+function saveHighScore(eventVariable) {
+  eventVariable.preventDefault();
+
+  const scoreLog = { 
+  name: teamName.value, 
+  score: score
+};
+
+// Manipulate array in the highScores
+  highScores.push(scoreLog);
+  highScores.sort((a,b) => b.score - a.score);
+  highScores.splice(maxHighScores);
+  localStorage.setItem("highScores", JSON.stringify(highScores));
+  window.location.assign("highscore.html");
+}
+
