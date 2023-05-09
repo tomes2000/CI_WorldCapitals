@@ -16,7 +16,14 @@
         <!-- Container that holds main content -->
         <div class="outer" id="outer-container">
 
-            
+            <!-- Difficulty buttons -->
+            <div id="difficulty">
+                <h2>Select your difficulty</h2>
+                <div class="btn-group">
+                    <button class="btn difficulty" id="easy" onclick="apiAddress = easyDifficulty">Easy</button>
+                    <button class="btn difficulty" id="medium" onclick="apiAddress = mediumDifficulty">Medium</button>
+                    <button class="btn difficulty" id="hard" onclick="apiAddress = hardDifficulty">Hard</button>
+            </div>
         </div>
 </body>
 </html>
